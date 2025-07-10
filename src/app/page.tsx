@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import FundoMar from "../../public/fundo mar api.png";
 import Carrossel from "@/components/Carrossel";
 
 export default function Home() {
