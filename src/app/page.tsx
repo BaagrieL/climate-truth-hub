@@ -17,11 +17,11 @@ export default function Home() {
 
       {/* Imagem de fundo em outra camada */}
       <Image
-        src={FundoMar}
-        alt="Imagem de fundo"
-        layout="fill"
-        objectFit=""
-        className="-z-10"
+        src="/fundo-mar-api.png"
+        fill
+        style={{ objectFit: "cover" }}
+        alt="Imagem"
+        priority
       />
 
       {/* Botões de ação */}
