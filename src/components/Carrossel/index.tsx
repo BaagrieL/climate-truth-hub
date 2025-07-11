@@ -18,7 +18,6 @@ export default function Carrossel() {
                 <SwiperSlide>
                     <div className="bg-green-500 h-full flex items-center justify-center">Card 2</div>
                 </SwiperSlide>
-                {/* ... */}
             </Swiper>
         </div>
 

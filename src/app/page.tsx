@@ -26,7 +26,7 @@ export default function Home() {
       {/* Botões de ação */}
       <div className="flex flex-col md:flex-row gap-4 mt-4">
         <Link
-          href={"/fatos"}
+          href={"/facts"}
           className="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition"
         >
           Ver Fatos Verificados

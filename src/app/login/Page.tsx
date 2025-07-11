@@ -1,28 +1,50 @@
-export default function LoginPage() {
-  return (
-    <main className="flex flex-col items-center justify-center min-h-screen">
-      <h1 className="text-2xl mb-4">Login</h1>
+// LoginPage.tsx
+'use client';
 
-      <form className="flex flex-col gap-2 w-64">
-        <input
-          type="text"
-          name="username"
-          placeholder="Nome de usuário"
-          className="border rounded p-2"
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Senha"
-          className="border rounded p-2"
-        />
-        <button
-          type="submit"
-          className="bg-blue-500 text-white rounded p-2 hover:bg-blue-600"
-        >
-          Entrar
-        </button>
-      </form>
-    </main>
+import { useRouter } from 'next/navigation';
+import { login } from '@/services/authService';
+import { LoginCredentials } from '@/services/authService';
+import { useState } from 'react';
+import Formulario from '@/components/Formulario';
+
+export default function LoginPage() {
+  const router = useRouter();
+  const [erro, setErro] = useState<string | null>(null);
+
+  async function handleLogin(dados: Record<string, string>) {
+    setErro(null);
+    try {
+      const user: LoginCredentials = {
+        username: dados['Usuário'],
+        password: dados['Senha']
+      };
+
+      if (!user.username || !user.password) {
+        throw new Error('Usuário e senha são obrigatórios');
+      }
+
+      const token = await login(user);
+      if (!token) {
+        throw new Error('Falha ao obter token');
+      }
+
+      localStorage.setItem('token', token);
+      router.push('/');
+    } catch (err: any) {
+      setErro(err.message);
+    }
+  }
+
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen px-8">
+      <Formulario
+        campos={['Usuário', 'Senha']}
+        nomeBotao="Entrar"
+        onSubmit={handleLogin}
+      />
+      {erro && (
+        <p className="text-red-500 text-center mt-4">Erro: {erro}</p>
+      )}
+    </div>
   );
 }
