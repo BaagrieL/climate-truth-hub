@@ -1,5 +1,8 @@
 'use client'
 
+import Image from "next/image"
+import Link from "next/link"
+
 export default function Footer() {
   return (
     <footer className="bg-neutral-900 text-white px-6 py-8 mt-auto">
@@ -9,22 +12,18 @@ export default function Footer() {
         </p>
 
         <div className="flex space-x-4">
-          <a
-            href="https://github.com/BaagrieL/climate-truth-api"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline text-sm"
-          >
-            GitHub API
-          </a>
-          <a
-            href="https://github.com/BaagrieL/climate-truth-hub"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline text-sm"
-          >
-            GitHub Frontend
-          </a>
+          <Link href="https://github.com/BaagrieL/climate-truth-hub" target="_blank">
+            <Image src="/github.svg" alt="GitHub" width={24} height={24} />
+          </Link>
+
+          <Link href="https://www.linkedin.com/in/baagriel/" target="_blank">
+            <Image src="/linkedin.svg" alt="LinkedIn" width={24} height={24} />
+          </Link>
+
+          <Link href="https://www.instagram.com/baagriel/" target="_blank">
+            <Image src="/instagram.svg" alt="Instagram" width={24} height={24} />
+          </Link>
+
         </div>
       </div>
     </footer>

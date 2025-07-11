@@ -4,7 +4,7 @@ import Carrossel from "@/components/Carrossel";
 
 export default function Home() {
   return (
-    <main className="flex flex-col text-center py-20 gap-6 min-h-screen">
+    <main className="flex flex-col text-center py-20 px-8 gap-6 min-h-screen">
       {/* Frase de impacto */}
       <h1 className="text-3xl md:text-5xl font-bold text-gray-300 max-w-2xl text-left">
         Descubra a verdade sobre as mudanças climáticas.
