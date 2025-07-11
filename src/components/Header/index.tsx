@@ -17,7 +17,7 @@ export default function Header() {
         </button>
         <nav className="hidden md:flex gap-6">
           <Link href={"/sobre"} className="hover:text-green-600">Sobre</Link>
-          <Link href={"/fatos"} className="hover:text-green-600">Fatos</Link>
+          <Link href={"/facts"} className="hover:text-green-600">Fatos</Link>
           <Link href={"/contato"} className="hover:text-green-600">Contato</Link>
         </nav>
       </header>
@@ -29,7 +29,7 @@ export default function Header() {
       {menuOpen && (
         <nav className="fixed top-16 left-0 w-full backdrop-blur-md bg-transparent shadow-md flex flex-col items-center gap-4 py-4 md:hidden z-50">
           <Link href={"/sobre"} className="hover:text-green-600">Sobre</Link>
-          <Link href={"/fatos"} className="hover:text-green-600">Fatos</Link>
+          <Link href={"/facts"} className="hover:text-green-600">Fatos</Link>
           <Link href={"/contato"} className="hover:text-green-600">Contato</Link>
         </nav>
       )}
