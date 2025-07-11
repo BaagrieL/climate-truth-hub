@@ -1,24 +1,38 @@
+"use client";
 import Link from "next/link";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <header className="flex justify-between bg-gradient-to-r from-blue-500 to-purple-600 text-white p-4 shadow-md">
-      <div className="flex justify-between items-center">
-        Logo
-      </div>
-      <nav>
-        <ul className="flex space-x-4">
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/about">About</Link>
-          </li>
-          <li>
-            <Link href="#">Contact</Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <>
+      {/* Header fixo */}
+      <header className="fixed top-0 left-0 w-full h-16 bg-trasnparent backdrop-blur-sm shadow-md flex items-center justify-between px-8 z-50">
+        <div className="font-bold text-green-600"><Link href={"/"}>ClimateTruth</Link></div>
+
+        <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+        <nav className="hidden md:flex gap-6">
+          <Link href={"/sobre"} className="hover:text-green-600">Sobre</Link>
+          <Link href={"/fatos"} className="hover:text-green-600">Fatos</Link>
+          <Link href={"/contato"} className="hover:text-green-600">Contato</Link>
+        </nav>
+      </header>
+
+      {/*  Espaço para evitar que o conteúdofique atrás do Header */}
+      <div className="h-15"></div>
+
+      {/* Dropdown fora do fluxo do Header, com backdrop-blur funcional */}
+      {menuOpen && (
+        <nav className="fixed top-16 left-0 w-full backdrop-blur-md bg-transparent shadow-md flex flex-col items-center gap-4 py-4 md:hidden z-50">
+          <Link href={"/sobre"} className="hover:text-green-600">Sobre</Link>
+          <Link href={"/fatos"} className="hover:text-green-600">Fatos</Link>
+          <Link href={"/contato"} className="hover:text-green-600">Contato</Link>
+        </nav>
+      )}
+    </>
   );
-};
+}
