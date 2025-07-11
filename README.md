@@ -65,10 +65,4 @@ Quer ajudar? Sinta-se à vontade para abrir issues, pull requests ou conversar s
 
 ---
 
-## 📜 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
-
----
-
 **Climate Truth Hub** — Por um futuro mais transparente, informado e sustentável. 🌱
