@@ -36,7 +36,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-8">
+    <div className="flex flex-col items-center h-[calc(100%-5rem)] justify-start py-50 px-8">
       <Formulario
         campos={['Usuário', 'Senha']}
         nomeBotao="Entrar"

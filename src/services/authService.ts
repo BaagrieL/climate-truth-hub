@@ -1,3 +1,5 @@
+import { getJSON, postJSON } from '@/services/httpClienteService';
+
 interface LoginResponse {
   token: string;
 }
@@ -15,35 +17,6 @@ interface RegisterCredentials {
 export interface LoginCredentials {
   username: string;
   password: string;
-}
-
-async function postJSON<T, U>(url: string, data: U): Promise<T>{
-  const resposta = await fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
-  });
-
-  if (!resposta.ok) {
-    const erro = await resposta.json();
-    throw new Error(erro.message || 'Erro na requisição');
-  }
-
-  return resposta.json();
-}
-
-async function getJSON<T>(url: string): Promise<T> {
-  const resposta = await fetch(url, {
-    method: 'GET',
-    headers: { 'Content-Type': 'application/json' }
-  });
-
-  if (!resposta.ok) {
-    const erro = await resposta.json();
-    throw new Error(erro.message || 'Erro na requisição');
-  }
-
-  return resposta.json();
 }
 
 export async function login(credentials: LoginCredentials): Promise<string> {
