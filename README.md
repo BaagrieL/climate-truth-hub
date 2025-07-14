@@ -44,6 +44,7 @@ O **Climate Truth Hub** nasce como uma plataforma digital colaborativa para reun
 ---
 
 ## 🌐 Acesso ao projeto
+- **Deploy**: [`Climate Truth Hub`](https://climate-truth-hub-yl22.vercel.app)
 
 - **Frontend**: [`climate-truth-hub`](https://github.com/BaagrieL/climate-truth-hub)
 - **Backend API**: [`climate-truth-api`](https://github.com/BaagrieL/climate-truth-api)
