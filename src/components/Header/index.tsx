@@ -18,11 +18,11 @@ export default function Header() {
         <nav className="hidden md:flex gap-6">
           <Link href={"/sobre"} className="hover:text-green-600">Sobre</Link>
           <Link href={"/facts"} className="hover:text-green-600">Fatos</Link>
-          <Link href={"/contato"} className="hover:text-green-600">Contato</Link>
+          <Link href={"/login"} className="hover:text-green-600">Login</Link>
         </nav>
       </header>
 
-      {/*  Espaço para evitar que o conteúdofique atrás do Header */}
+      {/*  Espaço para evitar que o conteúdo fique atrás do Header */}
       <div className="h-15"></div>
 
       {/* Dropdown fora do fluxo do Header, com backdrop-blur funcional */}
@@ -30,7 +30,7 @@ export default function Header() {
         <nav className="fixed top-16 left-0 w-full backdrop-blur-md bg-transparent shadow-md flex flex-col items-center gap-4 py-4 md:hidden z-50">
           <Link href={"/sobre"} className="hover:text-green-600">Sobre</Link>
           <Link href={"/facts"} className="hover:text-green-600">Fatos</Link>
-          <Link href={"/contato"} className="hover:text-green-600">Contato</Link>
+          <Link href={"/login"} className="hover:text-green-600">Login</Link>
         </nav>
       )}
     </>
