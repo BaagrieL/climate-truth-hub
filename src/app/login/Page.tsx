@@ -30,9 +30,15 @@ export default function LoginPage() {
 
       localStorage.setItem('token', token);
       router.push('/');
-    } catch (err: any) {
-      setErro(err.message);
+    } catch (err: unknown) {
+      console.error('Erro no login:', err);
+      if (err instanceof Error) {
+        setErro(err.message);
+      } else {
+        setErro('Erro desconhecido');
+      }
     }
+
   }
 
   return (

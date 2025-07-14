@@ -1,6 +1,5 @@
 'use client';
 
-import { LoginCredentials } from '@/services/authService';
 import { useState } from 'react';
 
 type FormularioProps = {
@@ -30,8 +29,12 @@ export default function Formulario({ campos, nomeBotao, onSubmit }: FormularioPr
             }
 
             await onSubmit(valores);
-        } catch (err: any) {
-            setErro(err.message || 'Erro inesperado.');
+        } catch (err: unknown) {
+            if (err instanceof Error) {
+                setErro(err.message);
+            } else {
+                setErro('Erro inesperado.');
+            }
         }
     }
 
