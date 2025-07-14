@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌍 Climate Truth Hub
 
-## Getting Started
+> Combater a desinformação climática com informação confiável, acessível e curada por pessoas comprometidas com a verdade.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ❓ Problema
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Em meio à crise climática global, a desinformação sobre o meio ambiente se espalha com rapidez, dificultando a conscientização e atrasando ações urgentes. Notícias falsas e enviesadas enfraquecem o debate público e confundem a população sobre temas críticos como aquecimento global, desmatamento e sustentabilidade.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✅ Solução
 
-## Learn More
+O **Climate Truth Hub** nasce como uma plataforma digital colaborativa para reunir, curar e disponibilizar **notícias confiáveis sobre mudanças climáticas**. A proposta é criar um **ambiente seguro e transparente**, onde qualquer pessoa pode sugerir notícias, e um grupo de curadores voluntários faz a validação antes da publicação.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ⚙️ Tecnologias utilizadas
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Camada        | Tecnologias                                       |
+|---------------|---------------------------------------------------|
+| **Frontend**  | Next.js 14+, TypeScript, Tailwind CSS             |
+| **Backend**   | Node.js, Express.js, MongoDB                      |
+| **Auth**      | JWT (JSON Web Token)                              |
+| **Design**    | UI leve, responsiva e acessível (mobile-first)    |
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🚀 Funcionalidades
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 👥 Público Geral
+- 📱 Landing Page do projeto
+
+### 📰 Colaboradores (usuários logados)
+- ✍️ Submissão de links/notícias ambientais
+- 🗣️ Inclusão de comentários e observações
+
+### ✅ Curadores/Admins
+- 🔐 Login com autenticação JWT
+- 📋 Painel de curadoria: aprovar ou recusar sugestões
+- 📊 Visualização de status (pendente, aprovado, recusado)
+
+---
+
+## 🌐 Acesso ao projeto
+
+- **Frontend**: [`climate-truth-hub`](https://github.com/BaagrieL/climate-truth-hub)
+- **Backend API**: [`climate-truth-api`](https://github.com/BaagrieL/climate-truth-api)
+
+---
+
+## 🧠 Futuras melhorias
+
+- 🌍 Tradução internacional (i18n)
+- 💬 Comentários nas notícias
+- 📈 Dashboard com métricas ambientais
+- 🔗 Integração com APIs externas (como IBGE, NASA, etc.)
+
+---
+
+## 🤝 Contribuindo
+
+Quer ajudar? Sinta-se à vontade para abrir issues, pull requests ou conversar sobre melhorias. Estamos abertos a colaborações que fortaleçam o compromisso com a **verdade climática**.
+
+---
+
+**Climate Truth Hub** — Por um futuro mais transparente, informado e sustentável. 🌱
