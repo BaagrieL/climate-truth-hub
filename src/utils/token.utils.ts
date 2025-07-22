@@ -1,0 +1,19 @@
+export function theresToken(): boolean {
+  return (
+    typeof window !== "undefined" && localStorage.getItem("token") !== null
+  );
+}
+
+export function getToken(): string | null {
+  return localStorage.getItem("token");
+}
+
+export function removeToken(): void {
+  localStorage.removeItem("token");
+}
+
+export function setToken(token: string): void {
+  localStorage.setItem("token", token);
+}
+
+

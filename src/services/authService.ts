@@ -8,7 +8,7 @@ interface RegisterResponse {
   message: string;
 }
 
-interface RegisterCredentials {
+export interface RegisterCredentials {
   username: string;
   password: string;
   role?: string;
@@ -24,9 +24,8 @@ export async function login(credentials: LoginCredentials): Promise<string> {
   return token;
 }
 
-export async function register(credentials: RegisterCredentials): Promise<string> {
-  const { message } = await postJSON<RegisterResponse, RegisterCredentials>('https://climate-truth-api.onrender.com/auth/register', credentials);
-  return message;
+export async function register(credentials: RegisterCredentials): Promise<RegisterResponse> {
+  return await postJSON<RegisterResponse, RegisterCredentials>('https://climate-truth-api.onrender.com/auth/register', credentials);
 }
 
 export async function getApiStatus(): Promise<string> {
