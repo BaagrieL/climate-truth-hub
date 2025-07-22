@@ -1,36 +1,24 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Noticia from '@/components/Noticia';
-import { fetchNoticias } from '@/services/submissionService';
 
 type NoticiaType = {
   title: string;
   content: string;
+  id?: string;
 };
 
-export default function Carrossel() {
-  const [noticias, setNoticias] = useState<NoticiaType[]>([]);
+interface CarrosselProps {
+  noticias: NoticiaType[];
+}
 
-  useEffect(() => {
-    async function carregarNoticias() {
-      try {
-        const resultado = await fetchNoticias();
-        setNoticias(resultado);
-      } catch (erro) {
-        console.error('Erro ao carregar notícias:', erro);
-      }
-    }
-
-    carregarNoticias();
-  }, []);
-
+export default function Carrossel({ noticias }: CarrosselProps) {
   return (
-    <div className="w-full max-w-screen-md h-[15rem] relative">
+    <div className="w-full max-w-screen-xl h-[24rem] relative">
       <Swiper
-        spaceBetween={16}
+        spaceBetween={20}
         slidesPerView={1.2}
         breakpoints={{
           640: { slidesPerView: 1.5 },
@@ -39,9 +27,18 @@ export default function Carrossel() {
         }}
         className='h-full w-full'
       >
-        {noticias.map((noticia, index) => (
-          <SwiperSlide key={index} className="bg-transparent border border-gray-500 rounded-lg py-8">
+        {noticias.map((noticia) => (
+          <SwiperSlide key={noticia.id} className="bg-transparent py-4">
+            <div className="
+              h-full w-full 
+              bg-gray-800 text-gray-50 
+              transform transition-transform duration-300 ease-in-out 
+              hover:-translate-y-2 hover:scale-102
+              shadow-lg
+              rounded-lg
+            ">
               <Noticia title={noticia.title} content={noticia.content} />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
