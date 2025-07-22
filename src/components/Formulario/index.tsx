@@ -1,10 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 type FormularioProps = {
     campos: string[]; // exemplo: ['Usuário', 'Senha']
-    nomeBotao: string;
+    nomeBotao: React.ReactNode;
+    desabilitado?: boolean;
     onSubmit: (valores: Record<string, string>) => Promise<void>;
 };
 
@@ -47,6 +48,7 @@ export default function Formulario({ campos, nomeBotao, onSubmit }: FormularioPr
                         type={campo.toLowerCase().includes('senha') ? 'password' : 'text'}
                         placeholder={campo}
                         value={valores[campo] ?? ''}
+                        name={campo.toLowerCase()}
                         onChange={(e) =>
                             setValores({ ...valores, [campo]: e.target.value })
                         }
@@ -55,7 +57,7 @@ export default function Formulario({ campos, nomeBotao, onSubmit }: FormularioPr
                 ))}
                 <button
                     type="submit"
-                    className="bg-blue-700 text-white p-2 rounded-md hover:bg-blue-500 transition click:scale-95"
+                    className="bg-green-800 text-white p-2 rounded-md hover:bg-green-700 transition click:scale-95 font-bold tracking-wide"
                 >
                     {nomeBotao}
                 </button>
