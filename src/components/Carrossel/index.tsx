@@ -7,6 +7,7 @@ import Noticia from '@/components/Noticia';
 type NoticiaType = {
   title: string;
   content: string;
+  type: string;
   id?: string;
 };
 
@@ -37,7 +38,7 @@ export default function Carrossel({ noticias }: CarrosselProps) {
               shadow-lg
               rounded-lg
             ">
-              <Noticia title={noticia.title} content={noticia.content} />
+              <Noticia title={noticia.title} content={noticia.content} type={noticia.type}/>
             </div>
           </SwiperSlide>
         ))}

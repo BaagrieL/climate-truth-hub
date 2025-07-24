@@ -11,6 +11,7 @@ import Button_create_new from '@/components/Button_create_new';
 interface NoticiaType {
     title: string;
     content: string;
+    type: string;
     id?: string;
 }
 
@@ -20,9 +21,6 @@ export default function FactsPage() {
     const [noticias, setNoticias] = useState<NoticiaType[]>([]);
     const router = useRouter();
 
-    function redirectToLogin() {
-        router.push("/login");
-    }
 
     useEffect(() => {
         async function checkAndLoadContent() {
@@ -30,7 +28,8 @@ export default function FactsPage() {
             setErro(null);
 
             if (!theresToken()) {
-                redirectToLogin();
+                router.push("/login");
+
                 return;
             }
 
@@ -43,7 +42,7 @@ export default function FactsPage() {
                 } else {
                     setErro('Erro desconhecido ao validar token ou carregar notícias. Redirecionando...');
                 }
-                redirectToLogin();
+                router.push("/login");
                 return;
             } finally {
                 setLoading(false);
@@ -70,7 +69,7 @@ export default function FactsPage() {
                 <p className="text-gray-400 mt-4">Nenhuma notícia encontrada no momento.</p>
             )}
 
-            <Button_create_new classes="absolute bg-green-700 z-2 md:bg-yellow-600 bottom-[14%] right-[10%] lg:bottom-[7%] lg:right-[5%]" size="lg" />
+            <Button_create_new classes="absolute bg-green-700 z-2 bottom-[14%] right-[10%] lg:bottom-[7%] lg:right-[5%]" size="lg" />
 
         </div >
     );

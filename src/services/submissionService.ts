@@ -5,7 +5,7 @@ export interface NoticiaProps {
   id?: string;
   title: string;
   content: string;
-  type?: string;
+  type: string;
   status?: string;
 }
 
