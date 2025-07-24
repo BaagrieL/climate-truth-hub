@@ -6,6 +6,7 @@ import { fetchNoticias } from "@/services/submissionService";
 import { useRouter } from 'next/navigation';
 import Spinner from '@/components/Spinner';
 import { theresToken } from '@/utils/token.utils';
+import Button_create_new from '@/components/Button_create_new';
 
 interface NoticiaType {
     title: string;
@@ -53,7 +54,7 @@ export default function FactsPage() {
     }, []);
 
     return (
-        <div className="flex flex-col items-flex-start py-12 px-8 w-full gap-6 min-h-screen">
+        <div className="flex flex-col items-flex-start py-12 px-8 w-full gap-6 min-h-calc(100vh - 664px)">
             <h1 className="text-3xl md:text-5xl font-bold text-gray-300 max-w-2xl">Climate Facts</h1>
 
             {loading && <div className="flex h-full w-full absolute justify-center items-center"><Spinner size="md" color="white" /></div>}
@@ -68,6 +69,9 @@ export default function FactsPage() {
             {!loading && !erro && noticias.length === 0 && (
                 <p className="text-gray-400 mt-4">Nenhuma notícia encontrada no momento.</p>
             )}
-        </div>
+
+            <Button_create_new classes="absolute bg-green-700 z-2 md:bg-yellow-600 bottom-[14%] right-[10%] lg:bottom-[7%] lg:right-[5%]" size="lg" />
+
+        </div >
     );
 }
