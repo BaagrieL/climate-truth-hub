@@ -31,9 +31,8 @@ export default function RegisterPage() {
             const user: RegisterCredentials = {
                 username,
                 password,
-                role: dados['username'] === 'admin' ? 'admin' : 'common'
+                role: dados['username'] === 'root' ? 'admin' : 'common'
             }
-
 
             const response = await register(user);
 
