@@ -53,7 +53,7 @@ export default function FactsPage() {
     }, []);
 
     return (
-        <div className="flex flex-col items-flex-start py-12 px-8 w-full gap-6 min-h-calc(100vh - 664px)">
+        <div className="flex flex-col items-flex-start py-12 px-8 w-full gap-6 min-h-[calc(100vh-60px)]">
             <h1 className="text-3xl md:text-5xl font-bold text-gray-300 max-w-2xl">Climate Facts</h1>
 
             {loading && <div className="flex h-full w-full absolute justify-center items-center"><Spinner size="md" color="white" /></div>}
@@ -69,7 +69,7 @@ export default function FactsPage() {
                 <p className="text-gray-400 mt-4">Nenhuma notícia encontrada no momento.</p>
             )}
 
-            <Button_create_new classes="absolute bg-green-700 z-2 bottom-[14%] right-[10%] lg:bottom-[7%] lg:right-[5%]" size="lg" />
+            <Button_create_new classes="absolute bg-green-700 z-2 bottom-[14%] right-[10%] lg:bottom-[7%] lg:right-[5%] hover:-translate-y-1" size="lg" />
 
         </div >
     );

@@ -1,4 +1,4 @@
-import { getJSON, postJSON } from "@/services/httpClienteService";
+import { deleteJSON, getJSON, postJSON } from "@/services/httpClienteService";
 import { getToken, theresToken } from "@/utils/token.utils";
 
 export interface NoticiaProps {
@@ -27,7 +27,7 @@ export async function fetchNoticias(): Promise<NoticiaProps[]> {
   );
 }
 
-export  async function createNoticia(
+export async function createNoticia(
   data: NoticiaProps
 ): Promise<CreateNoticiaResponseProps> {
   const headers: Record<string, string> = theresToken()
@@ -39,6 +39,19 @@ export  async function createNoticia(
   return await postJSON<CreateNoticiaResponseProps, NoticiaProps>(
     "https://climate-truth-api.onrender.com/submission/register",
     data,
+    headers
+  );
+}
+
+export async function deleteNoticia(id: string): Promise<CreateNoticiaResponseProps> {
+  const headers: Record<string, string> = theresToken()
+    ? {
+        Authorization: `Bearer ${getToken()}`,
+      }
+    : {};
+
+  return await deleteJSON<CreateNoticiaResponseProps>(
+    `https://climate-truth-api.onrender.com/submission/delete/${id}`,
     headers
   );
 }

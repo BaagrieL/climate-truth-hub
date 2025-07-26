@@ -19,6 +19,8 @@ export default function Button_create_new({ size, classes }: Button_create_newPr
             ${size === 'lg' ? 'scale-150' : ''}
             rounded-lg
             w-10 h-10
+            cursor-pointer
+            transition-all duration-300
             ${classes || ''}
         `}
                 onClick={() => setIsModalOpen(true)}>
@@ -32,6 +34,7 @@ export default function Button_create_new({ size, classes }: Button_create_newPr
                         setIsModalOpen(false);
 
                         alert("Submissão criada com sucesso!");
+                        window.location.reload();
                     }}
                 />
             )}
