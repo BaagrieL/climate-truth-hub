@@ -36,3 +36,20 @@ export async function postJSON<TResponse, TBody>(
 
   return resposta.json();
 }
+
+export async function deleteJSON<TResponse>(url: string, headers: Record<string, string> = {}): Promise<TResponse> {
+  const resposta = await fetch(url, {
+    method: 'DELETE',
+    headers: { 
+      'Content-Type': 'application/json', 
+      ...headers 
+    },
+  });
+
+  if (!resposta.ok) {
+    const erro = await resposta.json();
+    throw new Error(erro.error || 'Erro na requisição DELETE');
+  }
+
+  return resposta.json();
+}
